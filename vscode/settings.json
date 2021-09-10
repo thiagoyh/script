@@ -1,0 +1,380 @@
+{
+    "files.autoGuessEncoding": true,
+    "files.trimTrailingWhitespace": true,
+    "cmake.configureOnOpen": true,
+    "terminal.integrated.fontFamily": "monospace",
+    "window.title": "${dirty}${activeEditorLong}${separator}${rootName}${separator}${appName}",
+    "editor.fontSize": 19,
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true,
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/**",
+        "/opt/ros/melodic/include/**",
+        "/usr/include/**"
+    ],
+    "C_Cpp.default.compilerPath": "/usr/bin/clang",
+    "C_Cpp.default.intelliSenseMode": "linux-clang-x64",
+    "C_Cpp.default.cStandard": "c11",
+    "C_Cpp.default.cppStandard": "c++11", //可以选择更新到c++14标准
+    "launch": {
+        "version": "0.2.0",
+        "configurations": [
+            {
+                "name": "C/C++",
+                "type": "cppdbg",
+                "request": "launch",
+                "program": "${fileDirname}/${fileBasenameNoExtension}",
+                "args": [],
+                "stopAtEntry": false,
+                "cwd": "${workspaceFolder}",
+                "environment": [],
+                "externalConsole": false,
+                "MIMode": "gdb",
+                "preLaunchTask": "compile",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    }
+                ],
+                "miDebuggerPath": "/usr/bin/gdb"
+            }
+        ]
+    },
+    "task": {
+        "version": "2.0.0",
+        "tasks": [
+            {
+                "label": "compile",
+                "command": "g++",
+                "args": [
+                    "-g",
+                    "${file}",
+                    "-o",
+                    "${fileDirname}/${fileBasenameNoExtension}"
+                ],
+                "problemMatcher": {
+                    "owner": "cpp",
+                    "fileLocation": [
+                        "relative",
+                        "${workspaceRoot}"
+                    ],
+                    "pattern": {
+                        "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                        "file": 1,
+                        "line": 2,
+                        "column": 3,
+                        "severity": 4,
+                        "message": 5
+                    }
+                },
+                "group": {
+                    "kind": "build",
+                    "isDefault": true
+                }
+            }
+        ]
+    },
+    "editor.fontFamily": "'monospace','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.renderIndentGuides": false,
+    "doxdocgen.generic.paramTemplate": "@param[in] {param} ",
+    // 在注释中搜索以 * // , # , ; , 开头的标签！ -- 或 / *
+    "todo-tree.regex.regex": "((\\*|//|#|<!--|;|/\\*|^)\\s*($TAGS):|^\\s*- \\[ \\])",
+    "todo-tree.highlights.defaultHighlight": {
+        "icon": "alert",
+        "type": "text",
+        "foreground": "red",
+        "iconColour": "green"
+    },
+    "todo-tree.general.tags": [
+        "?",
+        "!",
+        "param",
+        "Step",
+        "c++11",
+        "note",
+        "tag",
+        "todo",
+        "321563"
+    ],
+    "todo-tree.highlights.customHighlight": {
+        "?": {
+            "icon": "question",
+            "foreground": "yellow",
+            "iconColour": "yellow",
+            "type": "text-and-comment"
+        },
+        "!": {
+            "foreground": "red",
+            "icon": "issue-opened",
+            "iconColour": "red",
+            "type": "text-and-comment"
+        },
+        "Step": {
+            "foreground": "#7CFC00",
+            "icon": "question",
+            "iconColour": "green",
+            "type": "text-and-comment",
+            "hideFromTree": true
+        },
+        "c++11": {
+            "icon": "tag",
+            "foreground": "violet",
+            "rulerColour": "violet",
+            "iconColour": "violet",
+            "type": "text-and-comment"
+        },
+        "note": {
+            "icon": "note",
+            "foreground": "orange",
+            "rulerColour": "orange",
+            "iconColour": "orange",
+            "type": "text-and-comment"
+        },
+        "param": {
+            "icon": "issue-closed",
+            "foreground": "orange",
+            "rulerColour": "orange",
+            "iconColour": "orange",
+            "type": "text-and-comment"
+        },
+        "tag": {
+            "icon": "tag",
+            "foreground": "#7CFC00",
+            "rulerColour": "#7CFC00",
+            "iconColour": "#7CFC00",
+            "rulerLane": "full",
+            "type": "text-and-comment"
+        },
+        "todo": {
+            "foreground": "#f90",
+            "rulerColour": "#f90",
+            "iconColour": "#f90",
+            "type": "text-and-comment"
+        }
+    },
+    "todo-tree.tree.showBadges": false,
+    "todo-tree.general.revealBehaviour": "start of todo",
+    "todo-tree.tree.showCountsInTree": true,
+    "todo-tree.filtering.excludeGlobs": [
+        "**/*.txt",
+        "**/*.md"
+    ],
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.showContextMenu": true,
+    "latex-workshop.intellisense.package.enabled": true,
+    "latex-workshop.message.error.show": false,
+    "latex-workshop.message.warning.show": false,
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "XeLaTeX",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "PDFLaTeX",
+            "tools": [
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "BibTeX",
+            "tools": [
+                "bibtex"
+            ]
+        },
+        {
+            "name": "LaTeXmk",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "xelatex -> bibtex -> xelatex*2",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "pdflatex -> bibtex -> pdflatex*2",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "xelatex -> latexmk -> xelatex*2",
+            "tools": [
+                "xelatex",
+                "latexmk",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "pdflatex -> latexmk -> pdflatex*2",
+            "tools": [
+                "pdflatex",
+                "latexmk",
+                "pdflatex",
+                "pdflatex"
+            ]
+        }
+    ],
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk"
+    ],
+    "latex-workshop.latex.autoClean.run": "onFailed",
+    "latex-workshop.latex.recipe.default": "lastUsed",
+    //"latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+    "latex-workshop.view.pdf.viewer": "tab",
+    // PDF查看器用于在\ref上的[View on PDF]链接
+    //"latex-workshop.view.pdf.ref.viewer": "auto",
+    // 使用外部查看器时要执行的命令。此功能不受官方支持。
+    //"latex-workshop.view.pdf.external.viewer.command": "D:/Program Files/SumatraPDF/SumatraPDF.exe", // 注意修改路径
+    // 使用外部查看器时，latex-workshop.view.pdf.external.view .command的参数。此功能不受官方支持。%PDF%是用于生成PDF文件的绝对路径的占位符。
+    //"latex-workshop.view.pdf.external.viewer.args": [
+    //    "%PDF%"
+    //],
+    // 将synctex转发到外部查看器时要执行的命令。此功能不受官方支持。
+    //"latex-workshop.view.pdf.external.synctex.command": "D:/Program Files/SumatraPDF/SumatraPDF.exe", // 注意修改路径
+    // latex-workshop.view.pdf.external.synctex的参数。当同步到外部查看器时。%LINE%是行号，%PDF%是生成PDF文件的绝对路径的占位符，%TEX%是触发syncTeX的扩展名为.tex的LaTeX文件路径。
+    //"latex-workshop.view.pdf.external.synctex.args": [
+    //    "-forward-search",
+    //    "%TEX%",
+    //    "%LINE%",
+    //    "-reuse-instance",
+    //    "-inverse-search",
+    //    "\"D:/Program Files/Microsoft VS Code/Code.exe\" \"D:/Program Files/Microsoft VS Code/resources/app/out/cli.js\" -r -g \"%f:%l\"", // 注意修改路径
+    //    "%PDF%"
+    //],
+    "C_Cpp.updateChannel": "Insiders",
+    "explorer.confirmDelete": false,
+    "remote.SSH.showLoginTerminal": true,
+    "remote.SSH.remotePlatform": {
+        "Ubuntuxcy": "linux",
+        "xcy": "linux",
+        "seattle": "linux"
+    },
+    "workbench.colorCustomizations": {
+        "[Material Theme]": {
+            "activityBarBadge.background": "#C6FF00",
+            "activityBar.activeBorder": "#C6FF00",
+            "list.activeSelectionForeground": "#C6FF00",
+            "list.inactiveSelectionForeground": "#C6FF00",
+            "list.highlightForeground": "#C6FF00",
+            "scrollbarSlider.activeBackground": "#C6FF0050",
+            "editorSuggestWidget.highlightForeground": "#C6FF00",
+            "textLink.foreground": "#C6FF00",
+            "progressBar.background": "#C6FF00",
+            "pickerGroup.foreground": "#C6FF00",
+            "tab.activeBorder": "#C6FF00",
+            "notificationLink.foreground": "#C6FF00",
+            "editorWidget.resizeBorder": "#C6FF00",
+            "editorWidget.border": "#C6FF00",
+            "settings.modifiedItemIndicator": "#C6FF00",
+            "settings.headerForeground": "#C6FF00",
+            "panelTitle.activeBorder": "#C6FF00",
+            "breadcrumb.activeSelectionForeground": "#C6FF00",
+            "menu.selectionForeground": "#C6FF00",
+            "menubar.selectionForeground": "#C6FF00",
+            "editor.findMatchBorder": "#C6FF00",
+            "selection.background": "#C6FF0040",
+            "statusBarItem.remoteBackground": "#C6FF00"
+        },
+        "workbench.colorTheme": "beautiful",
+        "workbench.iconTheme": "material-icon-theme",
+        "editor.tokenColorCustomizations": {
+            "[Quiet Light]": {
+                "comments": "#17e917",
+                "keywords": "#8e1da1" // 关键字
+                //"variables": "#e57373", // 变量名
+                //"strings": "#519657", // 字符串
+                //"functions": "#7357c2", // 函数名
+                //"numbers": "#AE81FF" // 数字
+            }
+        },
+        "sync.quietSync": true,
+        "workbench.commandPalette.preserveInput": true,
+        "gitlens.views.commits.avatars": false,
+        "gitlens.advanced.messages": {
+            "suppressGitMissingWarning": true
+        },
+        "python.autoComplete.extraPaths": [
+            "/opt/ros/melodic/lib/python2.7/dist-packages"
+        ],
+        "python.analysis.extraPaths": [
+            "/opt/ros/melodic/lib/python2.7/dist-packages"
+        ]
+    },
+    "git.autofetch": true,
+    "gitlens.advanced.messages": {
+        "suppressCreatePullRequestPrompt": true
+    }
+}
