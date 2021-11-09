@@ -1,8 +1,11 @@
 #!/bin/bash
 
 cd ~
-git clone https://github.com/Thiagoyh/cartographer_install.git
+mkdir cartographer_install
 cd ~/cartographer_install/cartographer_install
+
+git clone https://github.com/Thiagoyh/protobuf_install.git
+git clone https://github.com/Thiagoyh/ceres-solver_install.git
 
 git clone https://github.com/abseil/abseil-cpp.git
 
@@ -52,7 +55,7 @@ sudo stow absl
 
 # Build and install Ceres.
 cd -
-cd ../../ceres-solver
+cd ../../ceres-solver_install
 mkdir build
 cd build
 cmake .. -G Ninja -DCXX11=ON
@@ -62,7 +65,7 @@ sudo ninja install
 
 
 # Build and install proto3.
-cd ../../protobuf
+cd ../../protobuf_install
 mkdir build
 cd build
 cmake -G Ninja \
@@ -73,15 +76,6 @@ cmake -G Ninja \
 ninja
 sudo ninja install
 
-
-# Build and install Cartographer.
-cd ../../cartographer
-mkdir build
-cd build
-cmake .. -G Ninja
-ninja
-#CTEST_OUTPUT_ON_FAILURE=1 ninja test
-sudo ninja install
 
 
 #ros install cartographer
