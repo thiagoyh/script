@@ -2,7 +2,7 @@
 
 cd ~
 mkdir cartographer_install
-cd ~/cartographer_install/cartographer_install
+cd ~/cartographer_install
 
 git clone https://github.com/Thiagoyh/protobuf_install.git
 git clone https://github.com/Thiagoyh/ceres-solver_install.git
