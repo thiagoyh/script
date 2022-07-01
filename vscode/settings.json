@@ -4,7 +4,7 @@
     "cmake.configureOnOpen": true,
     "terminal.integrated.fontFamily": "monospace",
     "window.title": "${dirty}${activeEditorLong}${separator}${rootName}${separator}${appName}",
-    "editor.fontSize": 19,
+    "editor.fontSize": 23,
     "editor.formatOnType": true,
     "editor.formatOnSave": true,
     "C_Cpp.default.includePath": [
@@ -16,66 +16,6 @@
     "C_Cpp.default.intelliSenseMode": "linux-clang-x64",
     "C_Cpp.default.cStandard": "c11",
     "C_Cpp.default.cppStandard": "c++11", //可以选择更新到c++14标准
-    "launch": {
-        "version": "0.2.0",
-        "configurations": [
-            {
-                "name": "C/C++",
-                "type": "cppdbg",
-                "request": "launch",
-                "program": "${fileDirname}/${fileBasenameNoExtension}",
-                "args": [],
-                "stopAtEntry": false,
-                "cwd": "${workspaceFolder}",
-                "environment": [],
-                "externalConsole": false,
-                "MIMode": "gdb",
-                "preLaunchTask": "compile",
-                "setupCommands": [
-                    {
-                        "description": "Enable pretty-printing for gdb",
-                        "text": "-enable-pretty-printing",
-                        "ignoreFailures": true
-                    }
-                ],
-                "miDebuggerPath": "/usr/bin/gdb"
-            }
-        ]
-    },
-    "task": {
-        "version": "2.0.0",
-        "tasks": [
-            {
-                "label": "compile",
-                "command": "g++",
-                "args": [
-                    "-g",
-                    "${file}",
-                    "-o",
-                    "${fileDirname}/${fileBasenameNoExtension}"
-                ],
-                "problemMatcher": {
-                    "owner": "cpp",
-                    "fileLocation": [
-                        "relative",
-                        "${workspaceRoot}"
-                    ],
-                    "pattern": {
-                        "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-                        "file": 1,
-                        "line": 2,
-                        "column": 3,
-                        "severity": 4,
-                        "message": 5
-                    }
-                },
-                "group": {
-                    "kind": "build",
-                    "isDefault": true
-                }
-            }
-        ]
-    },
     "editor.fontFamily": "'monospace','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.renderIndentGuides": false,
     "doxdocgen.generic.paramTemplate": "@param[in] {param} ",
@@ -84,8 +24,8 @@
     "todo-tree.highlights.defaultHighlight": {
         "icon": "alert",
         "type": "text",
-        "foreground": "red",
-        "iconColour": "green"
+        "foreground": "#ff0000",
+        "iconColour": "#00ff00"
     },
     "todo-tree.general.tags": [
         "?",
@@ -101,42 +41,42 @@
     "todo-tree.highlights.customHighlight": {
         "?": {
             "icon": "question",
-            "foreground": "yellow",
-            "iconColour": "yellow",
+            "foreground": "#ffff00",
+            "iconColour": "#ffff00",
             "type": "text-and-comment"
         },
         "!": {
-            "foreground": "red",
+            "foreground": "#ff0000",
             "icon": "issue-opened",
-            "iconColour": "red",
+            "iconColour": "#ff0000",
             "type": "text-and-comment"
         },
         "Step": {
             "foreground": "#7CFC00",
             "icon": "question",
-            "iconColour": "green",
+            "iconColour": "#00ff00",
             "type": "text-and-comment",
             "hideFromTree": true
         },
         "c++11": {
             "icon": "tag",
-            "foreground": "violet",
-            "rulerColour": "violet",
-            "iconColour": "violet",
+            "foreground": "#7f00ff",
+            "rulerColour": "#7f00ff",
+            "iconColour": "#7f00ff",
             "type": "text-and-comment"
         },
         "note": {
             "icon": "note",
-            "foreground": "orange",
-            "rulerColour": "orange",
-            "iconColour": "orange",
+            "foreground": "#FFA500",
+            "rulerColour": "#FFA500",
+            "iconColour": "#FFA500",
             "type": "text-and-comment"
         },
         "param": {
             "icon": "issue-closed",
-            "foreground": "orange",
-            "rulerColour": "orange",
-            "iconColour": "orange",
+            "foreground": "#FFA500",
+            "rulerColour": "#FFA500",
+            "iconColour": "#FFA500",
             "type": "text-and-comment"
         },
         "tag": {
@@ -314,14 +254,6 @@
     //    "\"D:/Program Files/Microsoft VS Code/Code.exe\" \"D:/Program Files/Microsoft VS Code/resources/app/out/cli.js\" -r -g \"%f:%l\"", // 注意修改路径
     //    "%PDF%"
     //],
-    "C_Cpp.updateChannel": "Insiders",
-    "explorer.confirmDelete": false,
-    "remote.SSH.showLoginTerminal": true,
-    "remote.SSH.remotePlatform": {
-        "Ubuntuxcy": "linux",
-        "xcy": "linux",
-        "seattle": "linux"
-    },
     "workbench.colorCustomizations": {
         "[Material Theme]": {
             "activityBarBadge.background": "#C6FF00",
